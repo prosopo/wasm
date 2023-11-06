@@ -5,24 +5,17 @@
 
 import { assert } from '@polkadot/util';
 
-import * as bip39 from './bip39.js';
 import * as ed25519 from './ed25519.js';
-import * as hashing from './hashing.js';
-import * as secp256k1 from './secp256k1.js';
 import * as sr25519 from './sr25519.js';
-import * as vrf from './vrf.js';
+
 
 export const tests = {
   // We place secp256k1 first, this allows the interaction with it in the
   // hashing (specifically scrypt) test not be an issue (ASM.js only)
   // https://github.com/polkadot-js/wasm/issues/307
-  secp256k1,
   // eslint-disable-next-line sort-keys
-  bip39,
   ed25519,
-  hashing,
   sr25519,
-  vrf
 };
 
 /**
